@@ -1,0 +1,1606 @@
+/* 
+  Newest revision:  NOV 7 2013
+  	Changelog:
+	   	Make comments backgrounds opaque 
+	   	Nightmode fixes           
+    
+    TO DO:
+    	Solve link flair issues
+    	Re-design sidebar tables?
+    	Trophy area?
+    	fix all nightmode
+*/
+
+
+/*
+  Header
+*/
+
+	/* 
+	  Menu Bar
+	*/
+		.titlebox form 
+		{
+			position: static
+		}
+		.titlebox blockquote:first-child 
+		{
+			border-left: none;
+			position: absolute;
+			z-index: 10;
+			top: 0;
+			left: 0;
+		}
+		.titlebox blockquote:first-child p:first-child 
+		{
+			margin-top: 0px;
+			padding: 5px;
+			float: left;
+			font-size: 9px;
+			background:#eff7ff;
+			border: 1px solid #cee3f8;
+			font-weight:bold;
+			color:#555;
+			cursor:default;
+		}
+		.titlebox blockquote ul 
+		{
+			float: right;
+			padding: 1px;
+			background: #222;
+			border-top:1px solid white;
+			border-bottom:1px solid white;
+			border-left:1px solid white;
+			opacity:.85;
+			margin:0px;
+			color:white;
+		}
+		.titlebox blockquote ul li 
+		{
+			display: none;
+			padding:2px;
+			text-align:center;
+		}
+		.titlebox blockquote li a 
+		{
+			display:block;
+			font-size:9px;
+			color:white;
+		}
+		.titlebox blockquote ul li:first-child, .titlebox blockquote ul:hover li 
+		{
+			display: block
+		}
+		.titlebox blockquote li:first-child 
+		{
+			font-size: 9px;
+			padding: 4px;
+			cursor:default;
+		}
+		.titlebox blockquote:first-child ul li:hover 
+		{
+			background:#ffffff;
+		}
+		.titlebox blockquote li a:hover 
+		{
+		  background-color:#c02743!important;
+		}
+		.titlebox blockquote 
+		{
+			position:fixed;
+			top:19px;
+			right:0px;
+			border:none;
+			z-index:29999999;
+			margin-right:0;
+		}
+		.titlebox blockquote ul:nth-of-type(1) 
+		{
+		  width:150px;
+		}
+		.titlebox blockquote ul:nth-of-type(2) 
+		{
+		  width:150px;
+		}
+		.titlebox blockquote ul:nth-of-type(3) 
+		{
+		  width:150px;
+		}
+		.titlebox blockquote ul:nth-of-type(4) 
+		{
+		  width:150px;
+		}
+
+	/*
+	  Default Reddit selectors
+	*/
+		.pagename
+		{
+		  color:#FFF;
+		}
+		.pagename a
+		{
+		  color:#fff;
+		  font-size:1em!important;
+		}
+		#header
+		{
+		  position:relative;
+		  background-color:#222;
+		 /* border-bottom:21px solid gray;*/
+		}
+		#header-img
+		{
+		  margin-right:-10px;
+		  max-width:60px;
+		  max-height:60px;
+		}
+		#header-bottom-right a
+		{
+		  color:#fff;
+		}
+		#header-bottom-left
+		{
+		  border-top:24px solid #222;
+		  background-color:#222;
+		  background:url(%%banner%%) no-repeat;
+		  z-index:1;
+		}
+		#header-bottom-right
+		{
+  		  background-color:#222;
+		  border-bottom:none;
+		  opacity:.85;
+		  padding:3px 0;
+		  position:fixed;
+		  z-index:9002;
+		  top:47px;
+		  right:70px;
+		  height:19px;
+		  border-left:1px solid #FFF;
+		  border-bottom:1px solid #FFF;
+		  z-index:99999;
+		  border-top-left-radius:0!important;
+		  width:auto;
+		  padding-right:5px!important;
+		}
+		#header-bottom-right.res-navTop
+		{
+		  border-bottom:none;
+		  opacity:.85;
+		  padding:3px 0;
+		  position:fixed;
+		  z-index:9002;
+		  top:45px;
+		  height:19px;
+		  border-left:1px solid #FFF;
+		  border-bottom:1px solid #FFF;
+		  z-index:99999;
+		  border-top-left-radius:0!important;
+		  margin-top:0;
+		}
+		#sr-header-area a
+		{
+		  color:#888;
+		}
+		#sr-header-area a.choice
+		{
+		  color:#fff;
+		  background-color:#222;
+		}
+		#sr-header-area li.selected a
+		{
+		  color:#c02743;
+		  font-weight:700;
+		  border-color:#FFF;
+		}
+		#sr-header-area
+		{
+  		  background-color:#222;
+		  border-bottom:none;
+		  opacity:.85;
+		  border-bottom:1px solid #FFF;
+		  left:0;
+		  padding:3px 0;
+		  position:fixed;
+		  top:0;
+		  width:100%;
+		  z-index:9000;
+		}
+		#sr-more-link
+		{
+		  top:50px;
+		}
+		#srList
+		{
+		  border-bottom:none;
+		  opacity:.85;
+		  left:0;
+		  padding:3px 0;
+		  position:fixed!important;
+		  top:23px;
+		  margin-top:0;
+		  z-index:9000;
+		  border-bottom:1px solid #000;
+		  color:#FFF;
+		  background-color:#222!important;
+		}
+		#srList td a
+		{
+		  color:#FFF;
+		}
+		#srList tr:hover
+		{
+		  background-color:#c02743!important;
+		}
+		ul.tabmenu
+		{
+		  position:absolute;
+		  top:88px!important;
+		  left:45px;
+		}
+		.tabmenu li.selected a
+		{
+		  font-size:16px;
+		  font-weight:800;
+		  color:#c02743;
+		  border:0;
+  		  background:none;
+
+		}
+		.tabmenu li a
+		{
+		  font-size:16px;
+		  font-weight:400;
+		  color:#222;
+		  border-top:0;
+		  height:21px;
+		  background:none;
+		  padding-right:15px;
+		}
+		.tabmenu li a:hover
+		{
+		  color:#c02743;
+		}
+		.dropdown.srdrop .selected
+		{
+		  color:#fff;
+		}
+		table#srList thead
+		{
+		  border-bottom:1px solid #FFF;
+		}
+		table#srList tr
+		{
+		  border-collapse:collapse;
+		  border:0 solid #FFF;
+		}
+		#userbarToggle
+		{
+		  display:none!important;
+		}
+
+	/*
+	   Default RES Selectors
+	*/
+		a.subbarlink.RESShortcutsCurrentSub
+		{
+		  color:#c02743;
+		}
+		#RESShortcuts a:before
+		{
+		  display:none;
+		}
+		#RESShortcutsEditContainer
+		{
+		  opacity:.85;
+		  border-bottom:2px solid #FFF;
+		  border-left:1px solid #FFF;
+		  padding:3px 0;
+		  position:fixed;
+		  z-index:9001;
+		  height:30px!important;
+		  top:45px!important;
+		  background-color:#FFF;
+		}
+		#NREFloat
+		{
+		  margin-top:45px;
+		}
+		#NREMail
+		{
+		  display:none;
+		}
+		div#RESShortcutsAddFormContainer
+		{
+		  top:75px;
+		}
+
+	/*
+	  RES Nightmode Selectors
+	*/
+		.res-nightmode .tabmenu li a
+		{
+		  background-color:#444!important;
+		}
+		.res-nightmode .tabmenu li.selected a
+		{
+		  background-color:#c02743!important;
+		  border-color:#222!important;
+		}
+		.res-nightmode #header
+		{
+		  background-color:#222!important;
+		}
+		.res-nightmode #header-bottom-right
+		{
+		  background-color:#444!important;
+		}
+		.res-nightmode .pagename a
+		{
+		  color:#fff;
+		  font-size:1em!important;
+		}
+		.res-nightmode #sr-header-area
+		{
+  		  background-color:#222!important;
+		}
+		.res-nightmode #header-bottom-left
+		{
+		  background:url(%%bannernight%%)!important;
+		}
+		.res-nightmode .tabmenu li.selected a
+		{
+		  font-size:16px;
+		  font-weight:800;
+		  color:#c02743;
+		  border:0;
+  		  background:none!important;
+
+		}
+		.res-nightmode .tabmenu li a
+		{
+		  font-size:16px;
+		  font-weight:400;
+		  color:#fff!important;
+		  border-top:0;
+		  height:21px;
+		  background:none!important;
+		  padding-right:15px;
+		}
+		.res-nightmode .tabmenu li a:hover
+		{
+		  color:#c02743!important;
+		}
+
+
+/*
+  Sidebar
+*/
+
+	/*
+	  Sidebar picture
+	*/
+		div.side 
+		{
+		/*For best results, keep the sidebar pic at 325px WIDE*/
+		  width:325px;
+		/*Adjust the padding-top to fit the picture when it is 325 px wide*/
+		  	padding-top: 460px; 
+		  	background: url(%%smitty%%)  no-repeat top center ;
+		  z-index:100;
+		  margin-right:15px;
+		  padding-left:0;
+		  margin-top:7px;
+		}
+
+	/*
+	  Default Reddit Selectors
+	*/
+		.side 
+		{
+		/*Test*/
+		/*background-color:black;*/
+		  margin-left:5px;
+		}
+		.side h2 
+		{
+		  background-color:#c02743;
+		  border:5px solid #222;
+		  color:#FFF;
+		  padding-left:3px;
+		  border-radius:5px;
+		  margin-bottom:-4px;
+		  margin-left:0;
+		  margin-top:0;
+		  font-size:20px;
+		  text-align:center;
+		}
+		.side a 
+		{
+		  background-color:inherit;
+		}
+		.side a:hover 
+		{
+		  text-decoration:underline;
+		}
+		.side h3 
+		{
+		  color:#FFF;
+		  background-color:#222;
+		  border:5px solid #c02743;
+		  padding-left:3px;
+		  border-right:0;
+		  text-align:center;
+		  border-left:0;
+		  margin-bottom:7px;
+		  margin-top:5px;
+		}
+		.side
+		{
+		  clear:both;
+		}
+		.side a
+		{
+		  text-decoration:none;
+		}
+		.sidebox 
+		{
+		  background-color:#FFF;
+		}
+		.sidebox,.sidecontentbox,.titlebox 
+		{
+		  background-color:transparent;
+		  border:2px solid #222;
+		  outline:3px double #c02743;
+		  padding:7px;
+		  width:95%;
+		  margin-bottom:20px;
+		}
+		div.titlebox span.word 
+		{
+		  display:none;
+		}
+		div.titlebox span.number:after 
+		{
+		  content:" Dirty Birds";
+		}
+		.titlebox form 
+		{
+		  position:static;
+		}
+		.titlebox .redditname 
+		{
+		  color:#FFF;
+		  background-color:#222;
+		  border:5px solid #c02743;
+		  padding-left:3px;
+		  border-right:0;
+		  text-align:center;
+		  border-left:0;
+		  margin-bottom:7px;
+		}
+		.titlebox .redditname a 
+		{
+		  color:#FFF!important;
+		}
+		.titlebox .usertext-body table 
+		{
+		  border:5px solid #222;
+		  -moz-border-radius:15px;
+		  border-radius:15px;
+		  background-color:#FFF;
+		  width:100%;
+		  padding-left:5px;
+		  padding-right:5px;
+		  padding-top:5px;
+		  padding-bottom:5px;
+		  margin:0;
+		  list-style:none;
+		  font-size:100%;
+		  margin-bottom:7px;
+		  margin-top:0;
+		  border-collapse:collapse;
+		}
+		.titlebox .usertext-body th 
+		{
+		  border:1px solid #222;
+		  color:#c02743;
+		  border-right-style:none;
+		  border-left-style:none;
+		  font-size:110%;
+		}
+		.titlebox .usertext-body tr:hover 
+		{
+		  background-color:#ddd;
+		}
+		.titlebox .usertext-body td 
+		{
+		  border:1px solid #222;
+		  border-right-style:none;
+		  border-left-style:none;
+		  font-size:105%;
+		  padding:2px;
+		  text-align:justify;
+		}
+		.titlebox .usertext-body 
+		{
+		  margin:0;
+		  padding:0;
+		  width:105%;
+		}
+		.usertext-body a:hover
+		{
+		  text-decoration:underline;
+		}
+		.nub 
+		{
+		  display:none;
+		}
+		#search input[type="text"] 
+		{
+		  width:100%;
+		  padding:0;
+		}
+		div.searchpane.raisedbox 
+		{
+		  padding-left:0;
+		  padding-right:325px;
+		  width:50%;
+		}
+
+	/*
+	  RES Nightmode Selectors
+	*/	
+		.res-nightmode #search input[type="text"] 
+		{
+		  background-color:#444!important;
+		}
+		.res-nightmode .side a 
+		{
+		  color:#ddd!important;
+		}
+		.res-nightmode .side h2 
+		{
+		  background-color:#c02743;
+		  border:5px solid #444!important;
+		  color:#FFF!important;
+		  padding-left:3px;
+		  border-radius:5px;
+		  border-right:0!important;
+		  margin-bottom:-4px;
+		  margin-left:0;
+		  margin-top:0;
+		}
+		.res-nightmode .side h3 
+		{
+		  color:#FFF!important;
+		  background-color:#444;
+		  border:5px solid #c02743;
+		  padding-left:3px;
+		  border-right:0;
+		  text-align:center;
+		  border-left:0;
+		  margin-bottom:7px;
+		  margin-top:5px;
+		}
+		.res-nightmode .titlebox .redditname 
+		{
+		  background-color:#444!important;
+		  border:5px solid #c02743!important;
+		  border-right:0!important;
+		  border-left:0!important;
+		}
+		.res-nightmode .titlebox .usertext-body table 
+		{
+		  border:5px solid #444!important;
+		  -moz-border-radius:15px;
+		  border-radius:15px;
+		  background-color:#222;
+		  width:100%;
+		  padding-left:5px;
+		  padding-right:5px;
+		  padding-top:5px;
+		  padding-bottom:5px;
+		  margin:0;
+		  list-style:none;
+		  font-size:100%;
+		  margin-bottom:7px;
+		  margin-top:0;
+		  border-collapse:collapse;
+		}
+		.res-nightmode .titlebox .usertext-body th 
+		{
+		  border-color:#000;
+		}
+		.res-nightmode .titlebox .usertext-body tr:hover 
+		{
+		  background-color:#444;
+		}
+		.res-nightmode .titlebox .usertext-body td 
+		{
+		  border-color:#000;
+		}
+		.res-nightmode .titlebox .usertext-body td a 
+		{
+		  color:#ddd!important;
+		}
+		.res-nightmode .titlebox .usertext-body .md h3
+		{
+		  color:#FFF!important;
+		}
+		.res-nightmode .sidecontentbox .content 
+		{
+		  background-color:#444;
+		}
+		.res-nightmode .sidecontentbox 
+		{
+		  background-color:#222;
+		}
+		.res-nightmode .sidebox.submit 
+		{
+		  padding:5px!important;
+		  background-color:#444!important;
+		  background-image:none!important;
+		  border-radius:0!important;
+		  width:95%!important;
+		  border-width:5px!important;
+		  border-color:#222!important;
+		}
+		.res-nightmode .sidebox.submit a 
+		{
+		  color:#FFF!important;
+		}
+		.res-nightmode div.sidebox.create 
+		{
+		  background-image:none!important;
+		  padding-left:5px!important;
+		  border-width:5px!important;
+		  border-radius:0!important;
+		  border-color:#222!important;
+		  background-color:#444!important;
+		}
+		.res-nightmode div.sidebox.create div.spacer 
+		{
+		  background-color:#444!important;
+		}
+
+
+/*
+  Body
+*/
+
+	/*
+	  Default Reddit Selectors
+	*/
+		body
+		{
+		  background-attachment:fixed;
+		  background-position:center;
+		  background-repeat:no-repeat;
+		  font:normal x-small verdana, arial, helvetica, sans-serif;
+		  background-color:#FFF;
+		  z-index:1;
+		  background-image:url(%%falcons-background%%);
+		}
+		a
+		{
+		  color:#222;
+		}
+		h5
+		{
+		  text-align:center;
+		  color:#FFF;
+		  background-color:#222;
+		  border:5px solid #c02743;
+		  padding-left:3px;
+		  border-right:0;
+		  text-align:center;
+		  border-left:0;
+		  margin-bottom:7px;
+		}
+		h6
+		{
+		  text-align:center;
+		  padding:3px;
+		  margin-bottom:5px;
+		  color:#222;
+		  border-bottom:0;
+		  border-top:0;
+		}
+		div.link
+		{
+  		  opacity:.9; 
+  		}
+		.listing-page div.link
+		{
+		  margin: 0px 345px 5px 20px;
+		  padding-top:10px;
+		  padding-bottom:10px;
+		  background-color:#F3F3F3;
+  		  box-shadow: -2px 2px 5px #bbb;
+
+
+		}
+		.listing-page div.link:hover
+		{
+		  background-color:#DBDBDB!important;
+		  box-shadow: -2px 2px 5px #888888;
+
+		}
+		.listing-page div.link div.entry.RES-keyNav-activeElement
+		{
+		  background-color:white!important;
+		  margin-right:10px;
+		  opacity:.85; 
+		}
+		.listing-page div.link div.entry.RES-keyNav-activeElement:hover
+		{
+		  background-color:white!important;
+		  margin-right:10px;
+		  opacity:.85; 
+		}
+		.listing-page div.stickied
+		{
+		  border:none!important;
+		  margin-bottom:15px;
+		  box-shadow: -10px 10px 10px #888888;
+
+		}
+		.listing-page div.stickied:hover
+		{
+				  background-color:#DBDBDB!important;
+
+		  border:none!important;
+		  margin-bottom:15px;
+		  box-shadow: -10px 10px 10px #888888;
+
+		}
+		div.stickied a.thumbnail
+		{
+		  background-position:10px 0px; 
+		  background-image:url(%%sticky%%);
+		}
+		div.sheets
+		{
+		  margin-right:355px;
+		}
+		div.tabpane-content
+		{
+		  margin-right:325px;
+		}
+		div.md
+		{
+		  width:95%;
+		}
+		.thumbnail img[src^="/static/"]
+		{
+		  background-image:url(%%falcons-bw%%)!important;
+		  background-repeat:no-repeat!important;
+		  margin-left:auto!important;
+		  margin-right:auto!important;
+		  height:0!important;
+		  width:0!important;
+		  padding:40px 0 0 38px!important;
+		}
+		a[href].title:link
+		{
+		  color:#000;
+		}
+		.arrow.upmod
+		{
+		  background-image:url(%%sprite%%);
+		  background-position:-4px -227px;
+		}
+		.arrow.downmod
+		{
+		  background-image:url(%%sprite%%);
+		  background-position:-4px -249px;
+		}
+		.report-button:hover:before
+		{
+		  position:absolute;
+		  display:block;
+		  z-index:1000;
+		  padding:5px;
+		  border:1px solid #c02743;
+		  color:#c02743;
+		  background-color:#222;
+		  content:"Please message the mods if you report a link!  A report without a message will be ignored.";
+		  text-align:center;
+		  font-size:10px;
+		  font-weight:400;
+		  margin-left:5px;
+		  margin-top:5px;
+		}
+		.debuginfo
+		{
+		  visibility:hidden;
+		}
+		.leavemoderator
+		{
+		  background:inherit;
+		  color:#000;
+		}
+		form.toggle.flairtoggle
+		{
+		  background:transparent;
+		  color:#000;
+		}
+		#siteTable .link div.entry a.title
+		{
+		  color:#222;
+		}
+		#siteTable .link div.entry a.title:hover
+		{
+		  color:#c02743;
+		}
+		.author.moderator
+		{
+		  color:#c02743;
+		  background-color:#222;
+		}
+		.author.moderator:hover
+		{
+		/* standard style; no background, just green text */
+		  color:#222;
+		  background-color:#c02743;
+		}
+		div.content
+		{
+		  padding-top:20px;
+		}
+		.content a:hover
+		{
+		  color:#9A1F36;
+		}
+		.content p.title a:visited:hover
+		{
+		  color:#222!important;
+		}
+		.content p.title a:visited
+		{
+		  color:#9A1F36!important;
+		}
+		.morelink a
+		{
+		  color:#000;
+		  border:2px solid #222;
+		  margin-top:-2px;
+		  margin-left:-2px;
+		}
+		.morelink a:hover
+		{
+		  color:#000;
+		  background-color:#c02743;
+		  border:2px solid #222;
+		}
+		#preview-table
+		{
+		  margin-right:350px;
+		}
+		#preview-table table
+		{
+		  width:100%;
+		}
+		.footer .flat-list:active
+		{
+		  background-position:0 -108px;
+		}
+		.footer .flat-list li
+		{
+		  display:none;
+		  visibility:hidden;
+		}
+		.commentarea
+		{
+		  margin-right:345px;
+		}
+		.comment
+		{
+		  background-color:white;
+		}
+		.nestedlisting > .comment
+		{
+		  background-color:white;
+		  opacity:.90;
+   		  box-shadow: -1px 1px 3px #bbb;
+		}
+		.nestedlisting > .comment:hover
+		{
+		  background-color:white;
+		  opacity:.95;
+   		  box-shadow: -2px 2px 5px #bbb;
+		}
+		.comment .comment:hover
+		{
+   		  box-shadow: -2px 2px 5px #bbb;
+   		}
+
+	
+	/*
+	  Default RES Selectors
+	*/
+		.res .author.moderator
+		{
+		/* RES moderator style; white text, green background */
+		  color:#c02743!important;
+		  background-color:#222!important;
+		}
+		.res .author.moderator:hover
+		{
+		/* RES moderator style; white text, green background */
+		  color:#222!important;
+		  background-color:#c02743!important;
+		}
+
+	/*
+	  RES Nightmode Selectors
+	*/
+		.res-nightmode .arrow.up
+		{
+		  background:none!important;
+		  background-image:url(%%sprite%%)!important;
+		  background-position:-4px -271px!important;
+		  margin-bottom:1px;
+		}
+		.res-nightmode .arrow.down
+		{
+		  background:none!important;
+		  background-image:url(%%sprite%%)!important;
+		  background-position:-4px -293px!important;
+		}
+		.res-nightmode .arrow.upmod,.res-nightmode .arrow.upmod:hover
+		{
+		  background:none!important;
+		  background-image:url(%%sprite%%)!important;
+		  background-position:-4px -227px!important;
+		  margin-bottom:1px;
+		}
+		.res-nightmode .arrow.downmod,.res-nightmode .arrow.downmod:hover
+		{
+		  background:none!important;
+		  background-image:url(%%sprite%%)!important;
+		  background-position:-4px -249px!important;
+		}
+		.res-nightmode .voteWeight
+		{
+		  background-color:#444!important;
+		}
+		.res-nightmode .drop-choices
+		{
+		  background:#222!important;
+		}
+		.res-nightmode .flairselector li
+		{
+		  border:none;
+		}
+		.res-nightmode #siteTable .link div.entry a.title
+		{
+		  color:#ddd!important;
+		}
+		.res-nightmode #siteTable .link div.entry a.title:hover
+		{
+		  color:#c02743!important;
+		}
+		.res-nightmode #moderation_tools .content
+		{
+		  background-color:#444!important;
+		}
+		.res-nightmode #moderation_tools .content a
+		{
+		  background-color:#444!important;
+		}
+		.res-nightmode div.entry.unvoted.lcTagged.keyHighlight
+		{
+		  background-color:#444!important;
+		}
+		.res-nightmode div.keyHighlight
+		{
+		  background-color:#444!important;
+		}
+		.res-nightmode a.link-button,.res-nightmode a.text-button
+		{
+		  color:#ddd!important;
+		}
+		.res-nightmode div.leavemoderator
+		{
+		  color:#ddd!important;
+		}
+		.res-nightmode button.btn
+		{
+		  color:#FFF!important;
+		}
+		.res-nightmode .listing-page div.link div.entry.RES-keyNav-activeElement
+		{
+		  background-color:#555!important;
+		}
+		.res-nightmode div.link
+		{
+		  background-color:#222!important;
+		}
+		.res-nightmode div.link:hover
+		{
+		  background-color:#333!important;
+		}
+		.res-nightmode div.stickied:hover
+		{
+		  margin-bottom:15px!important;
+		}		
+		.res-nightmode div.stickied
+		{
+		  margin-bottom:15px!important;
+		}
+
+		  
+/*
+  Flair
+*/
+
+	/*
+	  Default Formatting
+	*/
+		a[href="/ATL"]:before,a[href$="/r/AtlantaHawks"]:before,.flair-hawks
+		{
+		  background-position:-2px -150px!important;
+		}
+		.flair 
+		{
+		  min-width:20px;
+		  height:20px;
+		  line-height:20px;
+		  text-indent:22px;
+		  padding-right:2px;
+		  background-color:#EBEBEB;
+		  border:1px solid gray;
+		  padding:0;
+		  background:url(%%flairsheet%%) no-repeat -9999px -9999px;
+		  display:inline-block;
+		}
+		.flair:before 
+		{
+		  padding-left:20px;
+		}
+		.flairselector h2 
+		{
+		  color:#FFF;
+		  background-color:#222;
+		  border:5px solid #c02743;
+		  padding-left:3px;
+		  border-right:0;
+		  text-align:center;
+		  border-left:0;
+		  margin-bottom:7px;
+		  margin-top:5px;
+		  z-index:999999;
+		  margin-bottom:3px;
+		  text-align:center;
+		}
+		.flairselector .customizer 
+		{
+		}
+		#siteTable span.flair,.sidecontentbox .flair,.sidecontentbox .flair h2 
+		{
+		  display:none!important;
+		}
+		div.flairtemplate.flairrow 
+		{
+		  margin-left:-100px;
+		}
+
+	/* 
+	  RES Nightmode Formatting
+	*/
+		.res-nightmode div.flairoptionpane li 
+		{
+		  margin-top:1px;
+		  padding-top:2px;
+		  padding-bottom:2px;
+		}
+		.res-nightmode div.flairoptionpane li:hover 
+		{
+		  background-color:#444;
+		}
+
+	/*
+	  Flair pictures
+  
+	  Flair CSS is generated from http://spritegen.website-performance.org
+	  and formatted to the tutorial here: http://www.reddit.com/r/csshelp/comments/m59kf/
+	  message /u/cjdimino for Sprite archive 
+	*/
+		.flair-afc
+		{
+		  background-position:0 0;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-anderson
+		{
+		  background-position:0 -25px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-andrews
+		{
+		  background-position:0 -50px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-bart
+		{
+		  background-position:0 -75px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-bears
+		{
+		  background-position:0 -100px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-bengals
+		{
+		  background-position:0 -125px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-bierman
+		{
+		  background-position:0 -150px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-bills
+		{
+		  background-position:0 -175px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-bobbymac
+		{
+		  background-position:0 -200px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-bosher
+		{
+		  background-position:0 -225px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-broncos
+		{
+		  background-position:0 -250px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-brooking
+		{
+		  background-position:0 -275px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-browns
+		{
+		  background-position:0 -300px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-bryant
+		{
+		  background-position:0 -325px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-buccaneers
+		{
+		  background-position:0 -350px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-cardinals
+		{
+		  background-position:0 -375px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-chandler
+		{
+		  background-position:0 -400px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-chargers
+		{
+		  background-position:0 -425px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-chiefs
+		{
+		  background-position:0 -450px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-colts
+		{
+		  background-position:0 -475px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-cowboys
+		{
+		  background-position:0 -500px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-decoud
+		{
+		  background-position:0 -525px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-deion
+		{
+		  background-position:0 -550px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-dolphins
+		{
+		  background-position:0 -575px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-eagles
+		{
+		  background-position:0 -600px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-falcons
+		{
+		  background-position:0 -625px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-falcons2
+		{
+		  background-position:0 -650px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-falconsbig
+		{
+		  background-position:0 -675px;
+		  min-width:100px;
+		  height:100px;
+		}
+		.flair-finneran
+		{
+		  background-position:0 -780px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-fortyniners
+		{
+		  background-position:0 -805px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-fts
+		{
+		  background-position:0 -830px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-giants
+		{
+		  background-position:0 -855px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-helmet1
+		{
+		  background-position:0 -880px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-helmet2
+		{
+		  background-position:0 -905px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-jaguars
+		{
+		  background-position:0 -930px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-jets
+		{
+		  background-position:0 -955px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-julio
+		{
+		  background-position:0 -980px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-lions
+		{
+		  background-position:0 -1005px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-matty
+		{
+		  background-position:0 -1030px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-morten
+		{
+		  background-position:0 -1055px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-nfc
+		{
+		  background-position:0 -1080px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-nfl
+		{
+		  background-position:0 -1105px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-nobis
+		{
+		  background-position:0 -1130px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-oilers
+		{
+		  background-position:0 -1155px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-osi
+		{
+		  background-position:0 -1180px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-packers
+		{
+		  background-position:0 -1205px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-panthers
+		{
+		  background-position:0 -1230px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-patriots
+		{
+		  background-position:0 -1255px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-quizz
+		{
+		  background-position:0 -1280px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-raiders
+		{
+		  background-position:0 -1305px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-rams
+		{
+		  background-position:0 -1330px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-ravens
+		{
+		  background-position:0 -1355px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-redskins
+		{
+		  background-position:0 -1380px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-rison
+		{
+		  background-position:0 -1405px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-roddy
+		{
+		  background-position:0 -1430px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-saints
+		{
+		  background-position:0 -1455px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-seahawks
+		{
+		  background-position:0 -1480px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-sjax
+		{
+		  background-position:0 -1505px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-spoon
+		{
+		  background-position:0 -1530px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-spoonspoon
+		{
+		  background-position:0 -1555px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-steelers
+		{
+		  background-position:0 -1580px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-texans
+		{
+		  background-position:0 -1605px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-titans
+		{
+		  background-position:0 -1630px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-tony
+		{
+		  background-position:0 -1655px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-tuggle
+		{
+		  background-position:0 -1680px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-vannote
+		{
+		  background-position:0 -1705px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-vikings
+		{
+		  background-position:0 -1730px;
+		  min-width:20px;
+		  height:20px;
+		}
+		.flair-willymo
+		{
+		  background-position:0 -1755px;
+		  min-width:20px;
+		  height:20px;
+		}
+
+
+/*
+  Comment Faces
+*/
+	a[href="/decoud"]
+	{
+	  display:inline-block;
+	  clear:none;
+	  width:80px;
+	  height:60px;
+	  background-image:url(%%thomas-decoud-cal%%);
+	  cursor:text;
+	}
+	a[href="/matt"]
+	{
+	  display:inline-block;
+	  clear:none;
+	  width:80px;
+	  height:85px;
+	  background-image:url(%%matty%%);
+	}
+	a[href="/spoon"]
+	{
+	  display:inline-block;
+	  clear:none;
+	  width:80px;
+	  height:80px;
+	  background-image:url(%%spoon%%);
+	}
+	a[href="/blank"]
+	{
+	  display:inline-block;
+	  clear:none;
+	  width:80px;
+	  height:80px;
+	  background-image:url(%%blank%%);
+	}
+	a[href="/blank2"]
+	{
+	  display:inline-block;
+	  clear:none;
+	  width:80px;
+	  height:80px;
+	  background-image:url(%%blank2%%);
+	}
+	a[href="/willymo"]
+	{
+	  display:inline-block;
+	  clear:none;
+	  width:80px;
+	  height:80px;
+	  background-image:url(%%willymo%%);
+	}
+
+
+/*
+  Link Filters
+*/
+	html[lang="tk"] .thing.link
+	{
+	  display:none;
+	}
+	html[lang="tk"] .thing.self
+	{
+	  display:block;
+	}
+	html[lang="tk"] .linklisting .odd
+	{
+	  background:none;
+	}
+	html[lang="ln"] .thing.link
+	{
+	  display:block;
+	}
+	html[lang="ln"] .thing.self
+	{
+	  display:none;
+	}
+	html[lang="ln"] .linklisting .odd
+	{
+	  background:none;
+	}
+	html[lang="fn"] .thing:not(.linkflair-fn)
+	{
+	  display:none;
+	}
