@@ -88,7 +88,7 @@
 		.titlebox blockquote 
 		{
 			position:fixed;
-			top:19px;
+			top:60px;
 			right:0px;
 			border:none;
 			z-index:29999999;
@@ -135,17 +135,19 @@
 		  max-width:60px;
 		  max-height:60px;
 		}
-		#header-bottom-right a
+/*		#header-bottom-right a
 		{
 		  color:#fff;
 		}
+*/
 		#header-bottom-left
 		{
-		  border-top:24px solid #222;
 		  background-color:#222;
 		  background:url(%%banner%%) no-repeat;
+            padding-top: 25px;
 		  z-index:1;
 		}
+/*
 		#header-bottom-right
 		{
   		  background-color:#222;
@@ -179,6 +181,7 @@
 		  border-top-left-radius:0!important;
 		  margin-top:0;
 		}
+
 		#sr-header-area a
 		{
 		  color:#888;
@@ -194,6 +197,7 @@
 		  font-weight:700;
 		  border-color:#FFF;
 		}
+
 		#sr-header-area
 		{
   		  background-color:#222;
@@ -233,6 +237,7 @@
 		{
 		  background-color:#c02743!important;
 		}
+
 		ul.tabmenu
 		{
 		  position:absolute;
@@ -280,9 +285,10 @@
 		  display:none!important;
 		}
 
-	/*
+
 	   Default RES Selectors
 	*/
+/*
 		a.subbarlink.RESShortcutsCurrentSub
 		{
 		  color:#c02743;
@@ -315,6 +321,7 @@
 		{
 		  top:75px;
 		}
+*/
 
 	/*
 	  RES Nightmode Selectors
@@ -384,14 +391,14 @@
 		div.side 
 		{
 		/*For best results, keep the sidebar pic at 325px WIDE*/
-		  width:325px;
+		    width:325px;
 		/*Adjust the padding-top to fit the picture when it is 325 px wide*/
-		  	 padding-top: 232px;
-		  	background: url(%%trio%%)  no-repeat top center ;
-		  z-index:100;
-		  margin-right:15px;
-		  padding-left:0;
-		  margin-top:7px;
+            padding-top: 232px;
+           /* background: url(%%trio%%)  no-repeat top center ;*/
+            z-index:100;
+            margin-right:15px;
+            padding-left:0;
+            margin-top:7px;
 		}
 
 	/*
@@ -399,12 +406,11 @@
 	*/
 		.side 
 		{
-		/*Test*/
-		/*background-color:black;*/
 		  margin-left:5px;
 		}
 		.side h2 
 		{
+            /*Used as Table Headers*/
 		  background-color:#c02743;
 		  border:5px solid #222;
 		  color:#FFF;
