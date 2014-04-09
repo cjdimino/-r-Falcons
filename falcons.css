@@ -386,8 +386,8 @@
 		/*For best results, keep the sidebar pic at 325px WIDE*/
 		  width:325px;
 		/*Adjust the padding-top to fit the picture when it is 325 px wide*/
-		  	padding-top: 460px; 
-		  	background: url(%%smitty%%)  no-repeat top center ;
+		  	 padding-top: 232px;
+		  	background: url(%%trio%%)  no-repeat top center ;
 		  z-index:100;
 		  margin-right:15px;
 		  padding-left:0;
@@ -419,10 +419,12 @@
 		.side a 
 		{
 		  background-color:inherit;
+		  text-decoration:underline;
+
 		}
 		.side a:hover 
 		{
-		  text-decoration:underline;
+		  text-decoration:none!important;
 		}
 		.side h3 
 		{
@@ -439,10 +441,6 @@
 		.side
 		{
 		  clear:both;
-		}
-		.side a
-		{
-		  text-decoration:none;
 		}
 		.sidebox 
 		{
